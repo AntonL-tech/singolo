@@ -41,7 +41,7 @@ ul {
 /* HEADER */
 
 .header {
-    padding: 33px 0 31px;
+    padding: 34px 0 30px;
     background-color: #2d303a;
     border-bottom: solid 6px #323746;
 }
@@ -59,6 +59,7 @@ ul {
     letter-spacing: -.55px;
     color: #fff;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .header__logo span {
