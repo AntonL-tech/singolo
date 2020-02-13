@@ -159,7 +159,7 @@ ul {
 .services {
     padding: 63px 0 31px;
     background-color: #f2f2f2;
-    border-bottom: 5px solid #fff
+    border-bottom: 6px solid #fff
 }
 
 .services__title {
@@ -175,6 +175,7 @@ ul {
     margin-bottom: 43px;
 
     font-size: 1.8rem;
+    font-weight: 300;
     color: #767e9e;
     line-height: 30px;
     text-align: justify;
