@@ -225,6 +225,13 @@ ul {
     font-weight: 400;
 
 }
+.services__item__title-des {
+    letter-spacing: -.25px;
+}
+
+.services__item__title-sup {
+    letter-spacing: -.5px;
+}
 
 .services__item__text {
 
