@@ -240,3 +240,7 @@ ul {
     line-height: 21px;
     text-align: justify;
 }
+
+.services__item__text-sup {
+    letter-spacing: -.15px;
+}
