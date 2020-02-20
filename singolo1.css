@@ -76,14 +76,14 @@ ul {
     text-transform: uppercase;
 }
 
-.nav__list__item {
+.nav__list_item {
     margin-right: 29px;
     cursor: pointer;
     transition: color .2s linear;
     position: relative;
 }
 
-.nav__list__item::after {
+.nav__list_item::after {
     content: "";
     background-color: #434759;
     width: 3px;
@@ -98,20 +98,20 @@ ul {
 
 }
 
-.nav__list__item:hover {
+.nav__list_item:hover {
     color: #f06c64;
     text-decoration: underline;
 }
 
-.nav__list__item:last-child {
+.nav__list_item:last-child {
     margin-right: 0;
 }
 
-.nav__list__item:last-child::after {
+.nav__list_item:last-child::after {
     width: 0;
 }
 
-.nav__list__item-active {
+.nav__list_item-active {
     color: #f06c64;
 }
 
