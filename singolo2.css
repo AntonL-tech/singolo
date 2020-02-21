@@ -189,6 +189,10 @@
     transition: background-color .2s linear;
 }
 
+.social__item:last-child {
+    margin-right: 0;
+}
+
 .social__item:hover {
     background-color: #666d89;
 }
