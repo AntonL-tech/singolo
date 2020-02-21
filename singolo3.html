@@ -9,6 +9,43 @@
     <link rel="stylesheet" href="singolo3.css">
 </head>
 <body>
-    
+    <section class="quote">
+        <div class="container">
+            <h2 class="qoute__title">Get a Quote</h2>
+            <div class="quote__subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
+
+            <div class="quote__inner">
+                <form action="/" method="POST" class="form">
+                    <input type="text" class="input" placeholder="Name (Required)" required pattern="[a-zA-Zа-яА-Я]+">
+                    <input type="email" class="input" placeholder="Email (Required)" required>
+                    <input type="text" class="input" placeholder="Subject">
+                    <textarea name="blog" id="blog" cols="30" rows="10" class="input input--area" placeholder="Describe your project in detail..."></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+        
+
+                <div class="quote__contact_info">
+                    <h3 class="quote__contact_title">Contact Information</h3>
+                    <p class="quote__contact_text">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shyra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
+                    <ul class="quote__contact_list">
+                        <li class="quote__contact_item">
+                            <img src="assets/images/contacts/location.png" alt="location" id="location">
+                            <a href="#" target="_blank" class="quote__contact_link">Elm St. 14/05 Lost City</a>
+                        </li>
+
+                        <li class="quote__contact_item">
+                            <img src="assets/images/contacts/phone.png" alt="phone" id="phone">
+                            <a href="tel:035283318635" target="_blank" class="quote__contact_link">03528 331 86 35 </a>
+                        </li>
+
+                        <li class="quote__contact_item">
+                            <img src="assets/images/contacts/mail.png" alt="mail" id="mail">
+                            <a href="mailto:info@singolo.com" target="_blank" class="quote__contact_link">info@singolo.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!--/.container-->
+    </section> 
 </body>
 </html>
