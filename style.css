@@ -141,20 +141,33 @@ ul {
 
 }
 
-.prev {
-    position: absolute;
-    top: 52%;
-    left: 2px;
+.arrow::before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    border-top: 5px solid #ca4549;
+    border-right: 5px solid #ca4549;
     cursor: pointer;
+    transition: border-color .2s linear;
 }
 
-.next {
-    position: absolute;
-    top: 52%;
-    right: 0;
-    cursor: pointer;
+.arrow:hover::before {
+    border-color: #2d303a;
 }
-
+.arrow--prev::before {
+    position: absolute;
+    top: 284px;
+    left: 5px;
+    z-index: 10;
+    transform: rotate(-135deg);
+}
+.arrow--next::before {
+    position: absolute;
+    top: 284px;
+    right: 3px;
+    z-index: 10;
+    transform:rotate(45deg);
+}
 /* Services */
 
 .services {
@@ -346,7 +359,7 @@ ul {
 }
 
 .about__title {
-    margin-bottom: 27px;
+    margin-bottom: 26px;
 
     font-family: "Lato Black", sans-serif;
     font-size: 3rem;
@@ -359,7 +372,7 @@ ul {
 }
 
 .about__subtitle {
-    margin-bottom: 42px;
+    margin-bottom: 43px;
 
     font-family: 'Lato Regular', sans-serif;
     font-size: 1.8rem;
@@ -458,9 +471,9 @@ ul {
 
 /* Get a Quote */
 .quote {
-    padding: 66px 0 6px;
+    padding: 72px 0 6px;
     background-color: #f06c64;
-    border: solid 6px #ea676b;
+    border-bottom: solid 6px #ea676b;
 }
 
 .qoute__title {
@@ -483,7 +496,7 @@ ul {
     line-height: 30px;
     color: #f0d8d9;
     text-align: justify;
-    letter-spacing: -.5px;
+    letter-spacing: -.52px;
 }
 
 .quote__inner {
@@ -624,3 +637,9 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
+
+.footer__copyright {
+    padding-top: 3px;
+    padding-left: 2px;
+}
+
