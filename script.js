@@ -3,6 +3,10 @@ const anchors = document.querySelectorAll('a[href*="#"]');
 const header = document.querySelector('.header');
 const iphoneVer = document.querySelector('.iphone_ver > img');
 const iphoneHor = document.querySelector('.iphone_hor > img');
+const portfolioItems = document.querySelectorAll('.portfolio__item');
+const portfolio = document.querySelector('.portfolio');
+const portfolioMenu = document.querySelectorAll('.portfolio__list_item');
+
 let shadowVer = true,
     shadowHor = true;
 
@@ -110,3 +114,76 @@ let slideIndex = 1,
 
     showSlides(slideIndex);
 
+
+// portfolio menu  
+portfolioMenu.forEach(el => {
+    el.addEventListener('click', () => {
+        portfolioMenu.forEach(element => {
+            element.classList.remove('portfolio__list_item-active');
+        });
+        el.classList.add('portfolio__list_item-active');
+        portfolioItems.forEach(element => {
+            element.classList.remove('portfolio__item-active');
+        });
+    });
+});
+
+
+
+    // portfolio active 
+portfolioItems.forEach(el => {
+    el.addEventListener('click', () => {
+        portfolioItems.forEach(element => {
+            element.classList.remove('portfolio__item-active');
+        });
+        el.classList.add('portfolio__item-active');
+        
+    });
+});
+
+
+
+// portfolio.addEventListener('click', () => {
+//     portfolioItems.forEach(el => {
+//         el.classList.remove('portfolio__item-active');
+//     })
+// })
+
+
+
+ // Tabs 
+
+ let info = document.querySelector('.portfolio__list'),
+     tabContent = document.querySelectorAll('.portfolio__inner');
+
+
+
+
+function hideTabContent(a) {
+ for (let i = a; i < tabContent.length; i++) {
+     tabContent[i].classList.remove('show');
+     tabContent[i].classList.add('hide');
+ }
+}
+
+hideTabContent(1);
+
+function showTabContent(b) {
+ if (tabContent[b].classList.contains('hide')) {
+     tabContent[b].classList.remove('hide');
+     tabContent[b].classList.add('show');
+ }
+}
+
+info.addEventListener('click', function(e) {
+ let target = e.target;
+
+ if (target && target.classList.contains('portfolio__list_item')) {
+     for (let i = 0; i < portfolioMenu.length; i++) {
+         if (target == portfolioMenu[i]) {
+             hideTabContent(0);
+             showTabContent(i);
+         }
+     }
+ }
+});
