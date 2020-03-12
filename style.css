@@ -80,9 +80,9 @@ ul {
 .nav__list_item {
     margin-right: 29px;
     cursor: pointer;
-    transition: color .2s linear;
     position: relative;
 }
+
 
 .nav__list_item::after {
     content: "";
@@ -99,10 +99,6 @@ ul {
 
 }
 
-.nav__list_item:hover {
-    color: #f06c64;
-    text-decoration: underline;
-}
 
 .nav__list_item:last-child {
     margin-right: 0;
@@ -112,9 +108,22 @@ ul {
     width: 0;
 }
 
-.nav__list_item-active {
+
+.nav__list_link {
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear;
+}
+
+.nav__list_link:hover {
+    color: #f06c64;
+    text-decoration: underline;
+}
+
+.nav__list_link-active {
     color: #f06c64;
 }
+
 
 /* Slider */
 
