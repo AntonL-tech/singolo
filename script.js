@@ -54,12 +54,12 @@ window.onscroll = function showHeader() {
     }
     
 
-    if (window.pageYOffset > contactH - 95) {
+    if (window.pageYOffset > portfolioH + servicesH + 734 - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
         MENU[4].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > aboutH - 95) {
+    } else if (window.pageYOffset > portfolioH + servicesH - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
@@ -69,7 +69,7 @@ window.onscroll = function showHeader() {
             element.classList.remove('nav__list_link-active');
         });
         MENU[2].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > servicesH - 95) {
+    } else if (window.pageYOffset > servicesH - 105) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
