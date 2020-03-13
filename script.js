@@ -54,12 +54,12 @@ window.onscroll = function showHeader() {
     }
     
 
-    if (window.pageYOffset > portfolioH + servicesH + 734 - 95) {
+    if (window.pageYOffset > portfolioH + servicesH + 850 - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
         MENU[4].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > portfolioH + servicesH - 95) {
+    } else if (window.pageYOffset > portfolioH + servicesH) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
