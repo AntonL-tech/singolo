@@ -6,6 +6,14 @@ const iphoneHor = document.querySelector('.iphone_hor > img');
 const portfolioItems = document.querySelectorAll('.portfolio__item');
 const portfolio = document.querySelector('.portfolio');
 const portfolioMenu = document.querySelectorAll('.portfolio__list_item');
+const services = document.getElementById('services');
+const about = document.getElementById('about');
+const contact = document.getElementById('contact');
+let servicesH = services.offsetTop,
+    portfolioH = portfolio.offsetTop,
+    aboutH = about.offsetTop,
+    contactH = contact.offsetTop;
+
 
 let shadowVer = true,
     shadowHor = true;
@@ -44,7 +52,43 @@ window.onscroll = function showHeader() {
     } else {
         header.classList.remove('header-fixed');
     }
+    
+
+    if (window.pageYOffset > contactH - 95) {
+        MENU.forEach(element => {
+            element.classList.remove('nav__list_link-active');
+        });
+        MENU[4].classList.add('nav__list_link-active');
+    } else if (window.pageYOffset > aboutH - 95) {
+        MENU.forEach(element => {
+            element.classList.remove('nav__list_link-active');
+        });
+        MENU[3].classList.add('nav__list_link-active');
+    } else if (window.pageYOffset > portfolioH - 95) {
+        MENU.forEach(element => {
+            element.classList.remove('nav__list_link-active');
+        });
+        MENU[2].classList.add('nav__list_link-active');
+    } else if (window.pageYOffset > servicesH - 95) {
+        MENU.forEach(element => {
+            element.classList.remove('nav__list_link-active');
+        });
+        MENU[1].classList.add('nav__list_link-active');
+    } else {
+        MENU.forEach(element => {
+            element.classList.remove('nav__list_link-active');
+        });
+        MENU[0].classList.add('nav__list_link-active');
+    }
 }
+
+
+
+// function offset(el) {
+//     var rect = el.getBoundingClientRect(),
+//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     return { top: rect.top + scrollTop}
+// }
 
 
 iphoneVer.addEventListener('click', () => {
@@ -115,6 +159,7 @@ let slideIndex = 1,
     showSlides(slideIndex);
 
 
+
 // portfolio menu  
 portfolioMenu.forEach(el => {
     el.addEventListener('click', () => {
@@ -132,7 +177,7 @@ portfolioMenu.forEach(el => {
 
     // portfolio active 
 portfolioItems.forEach(el => {
-    el.addEventListener('click', () => {
+    el.addEventListener('click', (e) => {
         portfolioItems.forEach(element => {
             element.classList.remove('portfolio__item-active');
         });
@@ -142,12 +187,18 @@ portfolioItems.forEach(el => {
 });
 
 
+portfolio.addEventListener('click', e => {
+    e.preventDefault();
+    let target = e.target;
+    if(!target.classList.contains('portfolio__img')) {
+        portfolioItems.forEach(element => {
+            element.classList.remove('portfolio__item-active');
+        });
+    }
+    console.log(target);
+});
 
-// portfolio.addEventListener('click', () => {
-//     portfolioItems.forEach(el => {
-//         el.classList.remove('portfolio__item-active');
-//     })
-// })
+
 
 
 
@@ -187,3 +238,59 @@ info.addEventListener('click', function(e) {
      }
  }
 });
+
+
+// Modal
+
+const submitBtn = document.getElementById('submit'),
+      overlay = document.querySelector('.overlay'),
+      okBtn = document.getElementById('ok'),
+      name = document.getElementById('name'),
+      email = document.getElementById('email'),
+      subject = document.getElementById('subject'),
+      blog = document.getElementById('blog'),
+      theme = document.getElementById('theme'),
+      descr = document.getElementById('descr');
+
+
+submitBtn.addEventListener('click', e => {
+    e.preventDefault();
+    if (name.value !== '' && email.value !== ''){
+        if (subject.value !== '') {
+            theme.textContent = 'Тема: ' + subject.value;
+        }
+        if (blog.value !== '') {
+            descr.textContent = 'Описание: ' + blog.value;
+        }
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+})
+
+
+okBtn.addEventListener('click', e => {
+    e.preventDefault();
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+    subject.value = '';
+    blog.value = '';
+    name.value = '';
+    email.value = '';
+    theme.textContent = 'Без темы';
+    descr.textContent = 'Без описания';
+})
+
+
+overlay.addEventListener('click', e =>{
+    let target = e.target;
+    if (target.classList.contains('overlay')) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = '';
+        subject.value = '';
+        blog.value = '';
+        name.value = '';
+        email.value = '';
+        theme.textContent = 'Без темы';
+        descr.textContent = 'Без описания';
+    }
+})
