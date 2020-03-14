@@ -9,10 +9,13 @@ const portfolioMenu = document.querySelectorAll('.portfolio__list_item');
 const services = document.getElementById('services');
 const about = document.getElementById('about');
 const contact = document.getElementById('contact');
-let servicesH = services.offsetTop,
-    portfolioH = portfolio.offsetTop,
-    aboutH = about.offsetTop,
-    contactH = contact.offsetTop;
+const slider = document.querySelector('.slider');
+
+let servicesH = services.offsetHeight,
+    portfolioH = portfolio.offsetHeight/4,
+    aboutH = about.offsetHeight,
+    contactH = contact.offsetHeight;
+    sliderH = slider.offsetHeight;
 
 
 let shadowVer = true,
@@ -54,22 +57,22 @@ window.onscroll = function showHeader() {
     }
     
 
-    if (window.pageYOffset > portfolioH + servicesH + 850 - 95) {
+    if (window.pageYOffset > portfolioH + servicesH + sliderH + aboutH - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
         MENU[4].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > portfolioH + servicesH) {
+    } else if (window.pageYOffset > portfolioH + servicesH + sliderH - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
         MENU[3].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > portfolioH - 95) {
+    } else if (window.pageYOffset > servicesH + sliderH - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
         MENU[2].classList.add('nav__list_link-active');
-    } else if (window.pageYOffset > servicesH - 105) {
+    } else if (window.pageYOffset > sliderH - 95) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
@@ -117,8 +120,7 @@ iphoneHor.addEventListener('click', () => {
 let slideIndex = 1,
         slides = document.querySelectorAll('.slider__item'),
         prev = document.querySelector('.arrow--prev'),
-        next = document.querySelector('.arrow--next'),
-        slider = document.querySelector('.slider');
+        next = document.querySelector('.arrow--next');
 
 
     function showSlides(a) {
