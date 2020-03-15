@@ -50,14 +50,14 @@ for (let anchor of anchors) {
 // fixed header 
 
 window.onscroll = function showHeader() {
-    if (window.pageYOffset > 300) {
+    if (window.pageYOffset > 100) {
         header.classList.add('header-fixed');
     } else {
         header.classList.remove('header-fixed');
     }
     
 
-    if (window.pageYOffset > portfolioH + servicesH + sliderH + aboutH - 95) {
+    if (window.pageYOffset > portfolioH + servicesH + sliderH + aboutH) {
         MENU.forEach(element => {
             element.classList.remove('nav__list_link-active');
         });
@@ -85,13 +85,6 @@ window.onscroll = function showHeader() {
     }
 }
 
-
-
-// function offset(el) {
-//     var rect = el.getBoundingClientRect(),
-//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     return { top: rect.top + scrollTop}
-// }
 
 
 iphoneVer.addEventListener('click', () => {
@@ -197,7 +190,6 @@ portfolio.addEventListener('click', e => {
             element.classList.remove('portfolio__item-active');
         });
     }
-    console.log(target);
 });
 
 
@@ -295,4 +287,16 @@ overlay.addEventListener('click', e =>{
         theme.textContent = 'Без темы';
         descr.textContent = 'Без описания';
     }
+})
+
+
+
+// Burger
+
+let burger = document.querySelector('.burger'),
+    nav = document.querySelector('.nav')
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('burger--active');
+    nav.classList.toggle('show');
 })

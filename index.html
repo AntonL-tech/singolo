@@ -54,8 +54,12 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
+                <button class="burger fade" type="button" id="navToggle">
+                    <span class="burger__item">Menu</span>
+                </button>
                 <h1 class="header__logo">Singolo<span>*</span></h1>
-                <nav class="nav">
+                <div></div>
+                <nav class="nav fade">
                     <ul class="nav__list">
                         <li class="nav__list_item "><a class="nav__list_link nav__list_link-active" href="#home">home</a></li>
                         <li class="nav__list_item"><a class="nav__list_link" href="#services">services</a></li>
@@ -95,27 +99,6 @@
         </div> <!-- ./container-->
     </div> <!-- ./slider-->
 
-    <div class="slider2" id="home" style='display: none;'>
-        <div class="container">
-
-            <div class="slider2__inner">
-
-                <div class="slider2__item  fade "  >
-                    <img  src="assets/images/Slide-1.png" alt="#">
-                </div>
-
-
-                <div class="slider2__item slider2__item-sec fade" style='display: none'>
-                    <img src="assets/images/Slide-2.png" alt="#">
-                </div>
-
-
-                <div class="arrow arrow--prev"></div>
-				<div class="arrow arrow--next"></div>
-            </div>
-
-        </div> <!-- ./container-->
-    </div>
 
     
 
@@ -526,7 +509,7 @@
                     <input id="email" type="email" class="input" placeholder="Email (Required)" required>
                     <input type="text" class="input" placeholder="Subject" id="subject">
                     <textarea name="blog" id="blog" cols="30" rows="10" class="input input--area" placeholder="Describe your project in detail..."></textarea>
-                    <button type="submit" class="btn" id="submit">Submit</button>
+                    <button type="submit" class="btn" id="submit">Send</button>
                 </form>
 
                 <div class="quote__contact_info">
@@ -595,9 +578,9 @@
     <div class="overlay fade">
         <div class="modal">
             <h2 class="modal__title">Письмо отправлено:</h2>
-            <p class="modal__text" id="theme">Без темы</p>
-            <p class="modal__text" id="descr">Без описания</p>
-            <p class="modal__text">Спасибо за Ваш отклик! Наш специалист в скором времени с вами свяжется.</p>
+            <div class="modal__text" id="theme">Без темы</div>
+            <div class="modal__text" id="descr">Без описания</div>
+            <div class="modal__text">Спасибо за Ваш отклик! Наш специалист в скором времени с вами свяжется.</div>
 
             <button type="button" class="btn" id="ok">OK</button>
         </div>
