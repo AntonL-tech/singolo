@@ -30,6 +30,9 @@ window.onload = () => {
                 element.classList.remove('nav__list_link-active');
             });
             el.classList.add('nav__list_link-active');
+            burger.classList.toggle('burger--active');
+            nav.classList.toggle('show');
+            header_logo.classList.toggle('header__logo-mob');
         });
     });
 
@@ -295,10 +298,12 @@ window.onload = () => {
     // Burger
 
     let burger = document.querySelector('.burger'),
-        nav = document.querySelector('.nav')
+        nav = document.querySelector('.nav'),
+        header_logo = document.querySelector('.header__logo');
 
     burger.addEventListener('click', () => {
         burger.classList.toggle('burger--active');
         nav.classList.toggle('show');
+        header_logo.classList.toggle('header__logo-mob');
     })
 }
