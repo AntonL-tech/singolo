@@ -97,7 +97,6 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    opacity: .95;
     z-index: 11;
     animation-name: show_header;
     animation-duration: .5s;
@@ -132,6 +131,10 @@ ul {
     cursor: pointer;
     z-index: 10;
 
+}
+
+.header__logo-mob {
+    margin-left: -110px;
 }
 
 .header__logo span {
@@ -803,7 +806,7 @@ ul {
 .modal {
     padding: 30px;
     width: 100%;
-    max-width: 500px;
+    max-width: 525px;
     margin: auto;
     background-color: #4d2021;
     position: relative;
@@ -929,6 +932,8 @@ ul {
         background-color: #2d303a;
         width: 278px;
         height: 100vh;
+        box-shadow: 0 0 15px black;
+
     }
     .nav__list {
         flex-direction: column;
@@ -1001,6 +1006,9 @@ ul {
         max-width: 151px;
         width: 50%;
     }
+    .portfolio__list_item {
+        padding: 0 4px;
+    }
 
     /* About */
     
@@ -1059,6 +1067,52 @@ ul {
 }
 
 
+@media (max-width:325px) {
+    .container {
+        padding: 0 15px;
+    }
 
+    .header {
+        padding: 20px 0;
+    }
+
+    .header__logo-mob {
+        margin-left: -80px;
+    }
+
+    .slider {
+        height: 180px;
+    }
+    .slider__inner {
+        height: 125px;
+    }
+
+    .slider__item {
+        height: 121px;
+    }
+
+    .iphone_hor img {
+        width: 120px;
+    }
+    .iphone_ver {
+        width: 60px;
+    }
+
+    .arrow--next::before {
+        top: 55px;
+    }
+
+    .arrow--prev::before {
+        top: 55px;
+    }
+
+
+    .portfolio__item {
+        width: 140px;
+        margin-bottom: 15px;
+    }
+
+    
+}
   
  
