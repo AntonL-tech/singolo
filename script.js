@@ -30,9 +30,11 @@ window.onload = () => {
                 element.classList.remove('nav__list_link-active');
             });
             el.classList.add('nav__list_link-active');
-            burger.classList.toggle('burger--active');
-            nav.classList.toggle('show');
-            header_logo.classList.toggle('header__logo-mob');
+            if (document.body.offsetWidth < 400) {
+                burger.classList.toggle('burger--active');
+                nav.classList.toggle('show');
+                header_logo.classList.toggle('header__logo-mob');
+            }
         });
     });
 
